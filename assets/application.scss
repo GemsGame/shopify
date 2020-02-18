@@ -66,10 +66,45 @@ del {
     color:#139158;
 }
 
-.goods__option {
+.add-window {
 
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) );
     display: grid;
     justify-content: center;
+    
+}
 
+.add-window__first-block {
+    background-color: #ecf6f1;
+    margin-top:100px;
+    text-align: center;
+    padding:10px;
+    border-top: 2px solid #139158
+}
+.add-window__second-block {
+    background-color: #ecf6f1;
+    margin-top:10px;
+    text-align: center;
+    padding:10px;
+  
+}
+
+.add-window__second-block-text{
+    color:#139158;
+}
+
+.add-window__goods-wrapper{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) );
+    display: grid;
+    justify-content: center;
+    gap:10px;
+}
+
+.add-window__goods-box {
+    height: 300px;
+    background-color:white;
+}
+
+.description {
+    margin-top:50px;
 }
