@@ -1,0 +1,64 @@
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign product_image_zoom_size = '400x400' -%}
+  {%- assign product_image_scale = '2' -%}
+  {%- assign enable_image_zoom = section.settings.enable_image_zoom -%}
+  {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = current_variant.price-%}
+
+<div class="goods">
+   <div class="goods__description">
+     
+           <div class="goods__description_image">
+           <img src="{{ product | img_url: product_image_zoom_size }}">
+          </div>
+          
+           <div class="goods__description_text">
+           <h1 class="goods__description_title">{{ product.title }}</h1>
+           <div class="goods__description_price">
+            <div>
+            {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
+     
+            </div>
+           <div>
+           <p class="goods__description_line-through-price">($0.60 per serving)</p>
+
+           </div>
+          </div>
+           <div class="goods__form_options-select">
+                {% for option in product.options_with_values %}
+                  <div class="select-item">
+                    <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                      {{ option.name }}
+                    </label>
+                    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                      id="SingleOptionSelector-{{ forloop.index0 }}"
+                      data-index="option{{ forloop.index }}"
+                    >
+                      {% for value in option.values %}
+                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% endfor %}
+           </div>
+
+             <div class="goods__button-row">
+          <button class="goods__button-next-button">next</button>
+          </div>
+
+           <div class="goods__deliver-info">
+           <p class="goods__deliver-info-header">REFILL SHIPS IN 30 DAYS.</p>
+          <p class="goods__deliver-info-text"> We will email you the week before about your upcoming refill shipment. By default, it will be another 60 servings delivered to you with free shipping, but you can adjust or cancel that at anytime.</p>
+           </div>
+
+          </div>
+
+        
+             
+    </div>
+
+<div class="goods__option">
+111
+</div>
+</div>
