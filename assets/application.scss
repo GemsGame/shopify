@@ -65,7 +65,10 @@ del {
     font-size: 2.5em;
     color:#139158;
 }
-
+.price-item-row {
+    font-size: 1.5em;
+    color:#139158;
+}
 .add-window {
 
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) );
@@ -101,10 +104,57 @@ del {
 }
 
 .add-window__goods-box {
-    height: 300px;
+    padding:20px;
     background-color:white;
 }
 
 .description {
     margin-top:50px;
+}
+
+.trigger-image {
+    margin-top: 100px;
+    display: grid;
+    justify-content: center;
+}
+
+.add-window__goods-box-button {
+    margin-top:15px;
+    padding:5px 35px 5px 35px;
+    background-color: #ecf6f1;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color:#139158;
+    border:1px solid #139158;
+}
+
+.add-window__goods-box-button:hover {
+    background-color: #139158;
+    color:white;
+
+}
+
+.add-window__goods-box-header {
+    text-transform: uppercase;
+}
+
+.finish-button {
+
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.finish-button > button {
+    padding:0px 30px 0px 30px;
+    background-color: #e3a453;
+    font-size: 2em;
+    text-transform: uppercase;
+    color:white;
+    border:0;
+}
+
+.finish-button > button:hover {
+  
+    background-color: #ec8d11;
+  
 }
