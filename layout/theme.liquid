@@ -38,6 +38,7 @@
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+ {{ 'application.js' | asset_url | script_tag }}
   <script>
     var theme = {
       breakpoints: {
@@ -135,5 +136,8 @@
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
   </ul>
+<!-- Begin ReCharge code -->
+{% include 'subscription-theme-footer' %}
+<!-- End ReCharge code -->
 </body>
 </html>

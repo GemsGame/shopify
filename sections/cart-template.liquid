@@ -58,7 +58,7 @@
                       {%- endif -%}
 
                       {%- for p in properties -%}
-                        {%- unless p.last == blank -%}
+                        {%- unless p.last == blank or p.first == "subscription_id" or p.first == "shipping_interval_frequency" or p.first == "shipping_interval_unit_type" -%}
                           <li class="product-details__item product-details__item--property{%if property_size == 0%} hide{% endif %}" data-cart-item-property>
                             <span class="product-details__item-label" data-cart-item-property-name>{{ p.first }}: </span>
 

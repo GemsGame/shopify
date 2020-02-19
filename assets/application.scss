@@ -133,7 +133,16 @@ del {
     color:white;
 
 }
-
+.add-window__goods-box-button-del {
+    margin-top:15px;
+    padding:5px 35px 5px 35px;
+    background-color: #139158;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color:white;
+    border:1px solid #139158;
+    display:none;
+}
 .add-window__goods-box-header {
     text-transform: uppercase;
 }
@@ -157,4 +166,15 @@ del {
   
     background-color: #ec8d11;
   
+}
+
+.product-single__variants {
+    display:none;
+}
+.product-single__quantity {
+    display:none
+}
+
+.add-to-cart___button {
+    display:none;
 }

@@ -26,7 +26,7 @@
            </div>
           </div>
            <div class="goods__form_options-select">
-                {% for option in product.options_with_values %}
+               <!-- {% for option in product.options_with_values %}
                   <div class="select-item">
                     <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
                       {{ option.name }}
@@ -40,13 +40,44 @@
                       {% endfor %}
                     </select>
                   </div>
-                {% endfor %}
+                {% endfor %} -->
+            
+      {% form 'product', product, data-productid: product.id, class:productform_class %}
+<!-- Begin ReCharge code -->
+{% if product.available %}{% include 'subscription-product' %}{% endif %}
+<!-- End ReCharge code -->
+
+            <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" class="product-single__variants">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+
+                  <option hidden {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+
+            <div class="product-single__quantity">
+              <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+            </div>
+
+    
+            {% if section.settings.enable_payment_button %}
+              {{ form | payment_button }}
+            {% endif %}
+
            </div>
 
              <div class="goods__button-row">
           <a href="#order-builder"><button class="goods__button-next-button">next</button></a>
+             
           </div>
-
+          {% endform %} 
            <div class="goods__deliver-info">
            <p class="goods__deliver-info-header">REFILL SHIPS IN 30 DAYS.</p>
           <p class="goods__deliver-info-text"> We will email you the week before about your upcoming refill shipment. By default, it will be another 60 servings delivered to you with free shipping, but you can adjust or cancel that at anytime.</p>
@@ -81,8 +112,11 @@
   <div class="add-window__goods-box-price price-item-row">
   $10.00
  </div>
- <button class="add-window__goods-box-button">
+ <button class="add-window__goods-box-button" id="first_product_box" data-product-id="32422407635080">
 add
+</button>
+ <button class="add-window__goods-box-button-del" id="first_product_box-del" data-product-id="32422407635080">
+remove
 </button>
 </div>
 
@@ -99,8 +133,11 @@ add
   <div class="add-window__goods-box-price price-item-row">
   $10.00
  </div>
- <button class="add-window__goods-box-button">
+ <button class="add-window__goods-box-button" id="first_product_box" data-product-id="32422407635080">
 add
+</button>
+ <button class="add-window__goods-box-button-del" id="first_product_box-del" data-product-id="32422407635080">
+remove
 </button>
 </div>
 <div class="add-window__goods-box">
@@ -116,8 +153,11 @@ add
   <div class="add-window__goods-box-price price-item-row">
   $10.00
  </div>
- <button class="add-window__goods-box-button">
+ <button class="add-window__goods-box-button" id="first_product_box" data-product-id="32422407635080">
 add
+</button>
+ <button class="add-window__goods-box-button-del" id="first_product_box-del" data-product-id="32422407635080">
+remove
 </button>
 </div>
 <div class="add-window__goods-box">
@@ -133,8 +173,11 @@ add
   <div class="add-window__goods-box-price price-item-row">
   $10.00
  </div>
- <button class="add-window__goods-box-button">
+ <button class="add-window__goods-box-button" id="first_product_box" data-product-id="32422407635080">
 add
+</button>
+ <button class="add-window__goods-box-button-del" id="first_product_box-del" data-product-id="32422407635080">
+remove
 </button>
 </div>
 </div>
