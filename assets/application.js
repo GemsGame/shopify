@@ -15,6 +15,14 @@ document.addEventListener("click", event => {
         document.getElementById("first_product_box-del").style="display:none;";
         document.getElementById("first_product_box").style="display:inline-block;";
     }
+
+   
+});
+
+document.addEventListener("change", event => {
+    console.log(event.target.value);
+    document.querySelector(".goods__deliver-info-header").innerHTML = `REFILL SHIPS IN ${event.target.value} DAYS`;
+
 })
 
 

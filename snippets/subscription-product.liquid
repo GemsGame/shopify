@@ -144,7 +144,26 @@
 		/* ReCharge CSS */
 		{{ recharge_custom_css }}
 		/* Add Custom CSS Below */
-
+		/* CUSTOM CSS BY ANTON MASANAVETS */
+    div.rc_block__type--active {
+    background-color: white;
+    }
+	div.rc_popup__hover {
+	display:none;
+	}
+	span.rc_label__delivery {
+		display:block;
+	}
+    .rc_subscription-only div.rc_block__type__options, div.rc_block__type--active div.rc_block__type__options, div.rc_popup {
+     display: grid;
+     grid-template-columns: 1fr;
+     }
+	 select.rc_select {
+     width: 100%;
+	 }
+	 div.rc_block__type {
+     padding: 0px;
+     }
 	</style>
 	<!-- Subscriptions Powered by ReCharge Payments: HTML -->
 	<div id="rc_container" {% if subscription_only %}class="rc_subscription-only"{% endif %} style="display: none;">
