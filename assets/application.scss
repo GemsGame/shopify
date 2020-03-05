@@ -47,6 +47,7 @@ del {
     text-transform: uppercase;
     color:white;
     border:0;
+    text-align: center;
 }
 .goods__button-next-button:hover {
     background-color: #f59e2c;
@@ -126,12 +127,14 @@ del {
     text-transform: uppercase;
     color:#139158;
     border:1px solid #139158;
+    display: inline-block;
+
 }
 
 .add-window__goods-box-button:hover {
     background-color: #139158;
     color:white;
-
+    cursor: pointer;
 }
 .add-window__goods-box-button-del {
     margin-top:15px;
